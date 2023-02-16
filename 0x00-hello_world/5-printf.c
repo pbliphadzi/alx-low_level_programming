@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Print a string "with proper grammer, but the outcome is a piece of art"
+ * main - Print strings
  * Description: use printf
  * Return: 0
  */
