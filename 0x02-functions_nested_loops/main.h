@@ -1,24 +1,29 @@
-int _putchar(char c);
+#define MAIN_H
 
+/* _putchar.c */
+int _putchar(char);
+
+/*10 x alphabet */
 void print_alphabet(void);
 
+/* 2-print_alphabet_x10.c */
 void print_alphabet_x10(void);
 
 int _islower(int c);
 
-int -isalpha(int c);
+int _isalpha(int n);
 
 int print_sign(int n);
 
-int _abs(int);
+int _abs(int n);
 
-int print_last_digit(int)
+int print_last_digit(int n);
 
 void jack_bauer(void);
 
-void time_table(void);
+void times_table(void);
 
-int add(int, int);
+int add(int a, int b);
 
 void print_to_98(int n);
 
