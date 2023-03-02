@@ -7,22 +7,15 @@
  * Return: the pointer to dest
  */
 
-
 char *_strcat(char *dest, char *src)
 {
-	int  x, y;
+	int index = 0;
+	int dest_len = 0;
 
-	x = 0;
-	while (dest[x] != '\0')
-		x++;
-	y = 0;
-	while (src[y] != '\0')
-	{
-		dest[x] = src[y];
-		x++;
-		y++;
-	}
-	dest[x] = '\0';
+	while (dest[index++])
+		dest_len++;
+	for (index = 0; src[index]; index++)
+		dest[dest_len++] = src[index];
 	return (dest);
 }
 
