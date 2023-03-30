@@ -11,7 +11,7 @@
 /* struct list_s - single line list template */
 
 
-typedef struct list
+typedef struct list_s
 {
 	char *str;
 	unsigned int len;
