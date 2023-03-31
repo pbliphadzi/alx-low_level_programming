@@ -1,5 +1,5 @@
-#ifndef LIST_H
-#define LIST_H
+#ifndef _LISTS_H
+#define _LISTS_H
 /* File: List.h
  * description : Header file containing prototypes for all functions used in the 0x12. C - Singly linked lists directory
  */
