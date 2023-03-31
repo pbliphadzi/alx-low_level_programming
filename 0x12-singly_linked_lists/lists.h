@@ -6,7 +6,7 @@
 
 #include <stdarg.h>
 #include <stdlib.h> 
-
+#include <string.h>
 /* If we have malloc(), stdlib.h will be needed */
 /* struct list_s - single line list template */
 
