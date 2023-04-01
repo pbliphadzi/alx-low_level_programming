@@ -11,25 +11,25 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new_node;
+	list_t *newnode;
 
 	if (head == NULL || str == NULL)
 		return (NULL);
 
-	new_node = malloc(sizeof(list_t));
-	if (new_node == NULL)
+	newnode = malloc(sizeof(list_t));
+	if (newnode == NULL)
 		return (NULL);
 
-	new_node->str = strdup(str);
-	if (new_node->str == NULL)
+	newnode->str = strdup(str);
+	if (newnode->str == NULL)
 	{
-		free(new_node);
+		free(newnode);
 		return (NULL);
 	}
+	newnode->len = strlen(str); /* new line to assign the length (bug fix)*/
+	newnode->next = *head;
+	*head = newnode;
 
-	new_node->next = *head;
-	*head = new_node;
-
-	return (new_node);
+	return (newnode);
 }
 
