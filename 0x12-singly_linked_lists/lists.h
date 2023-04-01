@@ -33,4 +33,10 @@ list_t *add_node(list_t **head, const char *str);
 list_t *add_node_end(list_t **head, const char *str);
 void free_list(list_t *head);
 
+/* For advanced tasks */
+typedef struct sentence {
+    char *str;                /* pointer to the string data*/
+    struct sentence *next;    /*pointer to the next sentence node*/
+} sentence;
+
 #endif
