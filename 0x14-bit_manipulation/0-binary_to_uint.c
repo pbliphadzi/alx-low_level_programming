@@ -1,22 +1,32 @@
+#include <stdio.h>
+#include <string.h>
 #include "main.h"
 
 /**
  *
- *
  */
 
-unsigned int binary_to_uint(const char *b) {
-    unsigned int result = 0;
-    if (b == NULL) {
-        return 0;
-    }
-    while (*b != '\0') {
-        if (*b != '0' && *b != '1') {
-            return 0;
+unsigned int binary_to_uint(const char *b)
+{
+    unsigned int decimal = 0;
+    int i, j;
+    int len;
+
+    if (!b)
+        return (0);
+
+    len = strlen(b);
+    for (i = 0, j = len - 1; i < len; i++, j--)
+    {
+        if (b[i] == '1')
+        {
+            decimal += (1 << j);
         }
-        result = (result << 1) | (*b - '0');
-        b++;
+        else if (b[i] != '0')
+        {
+            return (0);
+        }
     }
-    return result;
+    return (decimal);
 }
 
