@@ -4,10 +4,15 @@
 /*
  * fileclose - close a file and set its pointer to NULL
  *
+ * This function takes a pointer to a file pointer and closes the file
+ * if it is open. It also sets the pointer to NULL to avoid dangling
+ * references.
+ *
  * Parameters:
  *   file: pointer to a file pointer
  *
- * Returns: void
+ * Returns:
+ *   void
  */
 void fileclose(FILE **file) {
     if (*file) {
@@ -19,13 +24,18 @@ void fileclose(FILE **file) {
 /*
  * main - copy the content of a file to another file
  *
+ * This program takes two command-line arguments: the name of the file
+ * to copy from and the name of the file to copy to. It copies the
+ * content of the first file to the second file, creating it if it
+ * doesn't exist and overwriting it if it does.
+ *
  * Parameters:
  *   argc: the number of command-line arguments
  *   argv: an array of strings containing the command-line arguments
  *
- * Returns: int (0 if success, 97-100 if error)
+ * Returns:
+ *   int (0 if success, 97-100 if error)
  */
-
 int main(int argc, char *argv[]) {
     char *from_path, *to_path;
     FILE *from_file, *to_file;
@@ -72,4 +82,5 @@ int main(int argc, char *argv[]) {
     fileclose(&from_file);
     fileclose(&to_file);
     return 0;
-} 
+}
+
