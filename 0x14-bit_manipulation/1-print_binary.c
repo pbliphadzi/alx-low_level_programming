@@ -6,31 +6,21 @@
  */
 void print_binary(unsigned long int b)
 {
-    if (b == 0) 
-    {
-        putchar('0');
-        return;
-    }
-    
-    unsigned int num_bits = sizeof(b) * 8;
-    unsigned int found_one = 0;
-    unsigned int i;
-    
-    for (i = num_bits - 1; i >= 0; i--)
-    {
-        unsigned long int mask = 1UL << i;
-        
-        if (b & mask)
-        {
-            found_one = 1;
-            putchar('1');
-        }
-        else if (found_one)
-        {
-            putchar('0');
-        }
-    }
-    
-    return;
+	unsigned int num_bits = sizeof(b) * 8;
+	unsigned int i;
+	unsigned long int mask = 1UL << (num_bits - 1);
+
+	while (mask > 0)
+	{
+		if (b & mask)
+			_putchar('1');
+		else
+			_putchar('0');
+
+		mask >>= 1;
+	}
+
+	if (b == 0)
+		_putchar('0');
 }
 
