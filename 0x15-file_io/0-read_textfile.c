@@ -3,10 +3,8 @@
 
 /**
  * read_textfile - Reads a text file and prints it to POSIX standard output.
- *
- * @filename
- * @letters
- *
+ * @filename: Name of the file to read.
+ * @letters: Number of letters to read from the file.
  * Return: If successful, the number of bytes read and printed. Otherwise, 0.
  */
 
