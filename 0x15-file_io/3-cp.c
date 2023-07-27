@@ -53,3 +53,26 @@ void copyFile(const char *fileFrom, const char *fileTo)
     }
 }
 
+/**
+ * main - entry point
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0 on success, other values on failure
+ */
+int main(int argc, char *argv[])
+{
+    const char *fileFrom, *fileTo;
+
+    if (argc != 3)
+    {
+        dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
+        return 97;
+    }
+
+    fileFrom = argv[1];
+    fileTo = argv[2];
+    copyFile(fileFrom, fileTo);
+
+    return 0;
+}
+
