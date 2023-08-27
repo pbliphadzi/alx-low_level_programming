@@ -11,16 +11,17 @@
 
 int main(int argc, char *argv[])
 {
+    unsigned int i;
+    size_t len, add, b;
+    char *charset = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+    char key[KEY_LENGTH + 1]; // +1 for the null-terminator
+    char max_char;
+
     if (argc != 2)
     {
         printf("Usage: %s <username>\n", argv[0]);
         return 1;
     }
-
-    unsigned int i;
-    size_t len, add, b;
-    char *charset = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
-    char key[KEY_LENGTH + 1]; // +1 for the null-terminator
 
     len = strlen(argv[1]);
     add = 0;
@@ -32,7 +33,7 @@ int main(int argc, char *argv[])
         b *= argv[1][i];
     }
 
-    char max_char = argv[1][0];
+    max_char = argv[1][0];
     for (i = 0; i < len; i++)
     {
         if (max_char <= argv[1][i])
